@@ -1,0 +1,15 @@
+.header-container{
+    height: var(--header-height);
+    background-color: #00a2e1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.header-nav{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
