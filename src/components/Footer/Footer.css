@@ -1,0 +1,22 @@
+.footer{
+    height: 60px;
+    background-color: black;
+    color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-left, .footer-right{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-left{
+    width: 50%;
+}
+
+.footer-right{
+    width: 20%;
+}
