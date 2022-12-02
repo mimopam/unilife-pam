@@ -1,0 +1,22 @@
+
+
+.allcities-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.allcities-container button{
+    width: 200px;
+    background-color: white;
+    color: black;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.allcities-container button:hover{
+    background-color: blue;
+    color: white;
+    
+}

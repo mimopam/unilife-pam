@@ -1,0 +1,13 @@
+.textbox-container{
+    display: flex;
+    padding: 20px;
+}
+
+.textbox-container img{
+    width: 100px;
+}
+
+.textbox-right{
+    width: 70%;
+    margin: 20px;
+}

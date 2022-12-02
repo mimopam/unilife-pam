@@ -1,0 +1,10 @@
+.compare-box{
+    background-color: #F6FAFD;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    height: 250px;
+    padding: 20px;
+   
+}
