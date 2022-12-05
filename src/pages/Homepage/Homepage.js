@@ -16,6 +16,7 @@ import handpic from '../../assets/hands.png'
 
 import './Homepage.css'
 import TextBox from '../../components/TextBox/TextBox'
+import SearchBar from '../../components/SearchBar/SearchBar'
 
 
 function Homepage() {
@@ -48,7 +49,10 @@ function Homepage() {
     <div className="homepage-container">
         
         <Banner headline={"Find student homes with bills included"}
-             subhead={"A simple and faster way to search for student accomodations"} />
+             subhead={"A simple and faster way to search for student accomodations"} 
+        />
+        
+        <SearchBar />
         <h2>Student accomodations in our top cities</h2>
         <div className="cities-container">
           {

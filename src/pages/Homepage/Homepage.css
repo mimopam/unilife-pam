@@ -1,5 +1,6 @@
 .homepage-container{
-    margin-top: var(--header-height);
+    /* margin-top: var(--header-height); */
+    min-width: 100vh;
 }
 
 .cities-container{
