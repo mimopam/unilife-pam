@@ -11,7 +11,7 @@ import comparepic from '../../assets/compare.png'
 import heartpic from '../../assets/heart.png'
 import personpic from '../../assets/person.png'
 import handpic from '../../assets/hands.png'
-
+import {Link} from 'react-router-dom'
 
 
 import './Homepage.css'
@@ -56,13 +56,17 @@ function Homepage() {
         <h2>Student accomodations in our top cities</h2>
         <div className="cities-container">
           {
-            cities.map(city=><CityCard city={city}/>)
+            cities.map(city=><CityCard key={city._id} city={city}/>)
           }
         </div>
         {/* {
           cities.map(city=><p>{city.name}</p>)
         } */}
-        <button>See All Cities</button>
+
+        <Link to="/allcities">
+        <button className="see-cities-btn">See All Cities</button>
+        </Link>
+
         <div className="compare-container">
           <h1>Compare all inclusive student homes</h1>
           <div className="compare-boxes">
@@ -87,7 +91,7 @@ function Homepage() {
             <TextBox image={heartpic}
                      headline="Your favorite"
                      text={text2} />
-            <button>Search&Compare</button>
+            <button className="see-cities-btn">Search&Compare</button>
           </div>
           <img src={personpic} />
         </div>

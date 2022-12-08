@@ -2,13 +2,14 @@ import React from 'react'
 import './Header.css'
 import House from '../../assets/House.svg'
 import { MdFavoriteBorder, MdMailOutline } from "react-icons/md";
+import {Link} from 'react-router-dom'
 
 function Header() {
   return (
     <div className="header-container">
-        <div className="header-logo">
+        <Link to='/' className="header-logo">
             <img src={House} />
-        </div>
+        </Link>
         <div className="header-nav">
             <MdFavoriteBorder />
             <p>ShortList</p>

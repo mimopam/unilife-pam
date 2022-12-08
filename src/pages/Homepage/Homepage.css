@@ -1,6 +1,10 @@
 .homepage-container{
     /* margin-top: var(--header-height); */
     min-width: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cities-container{
@@ -34,4 +38,12 @@
 .bottom-left{
     display: flex;
     flex-direction: column;
+}
+
+.see-cities-btn{
+    width: 200px;
+    border-radius: 8px;
+    color: white;
+    background-color: #3A5295;
+    padding: 8px;
 }
