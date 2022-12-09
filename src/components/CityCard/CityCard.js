@@ -1,5 +1,6 @@
 import React from 'react'
 import './CityCard.css'
+import {Link} from 'react-router-dom'
 
 function CityCard({city}) {
 
@@ -19,6 +20,7 @@ function CityCard({city}) {
 
 
   return (
+    <Link to={`/details/${city._id}`}>
     <div style={imageStyle} >
         <div className="city-info">
             <h2>{city.name}</h2>
@@ -27,6 +29,7 @@ function CityCard({city}) {
         
         {/* <img src={city.image_url} /> */}
     </div>
+    </Link>
   )
 }
 
