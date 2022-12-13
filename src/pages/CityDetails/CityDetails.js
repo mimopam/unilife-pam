@@ -4,7 +4,9 @@ import SearchBar from '../../components/SearchBar/SearchBar'
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
 
+
 import './CityDetails.css'
+import Property from '../../components/Property/Property'
 
 
 function CityDetails() {
@@ -39,9 +41,12 @@ function CityDetails() {
              subhead={"Whatever you're after, we can helpl you find hte right student accommodation for you."} />
         <SearchBar />
         <h2>{numProperties} homes in {properties[0]?.address.city}</h2>
+        <div className="properties">
         {
-            properties.map(item=> <p>{item?.rent}</p>)
+            // properties.map(item=> <p>{item?.rent}</p>)
+            properties.map(item => <Property data={item} />)
         }
+        </div>
     </div>
   )
 }

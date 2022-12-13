@@ -1,11 +1,15 @@
 import React from 'react'
 import Banner from '../../components/Banner/Banner'
 
+import {useNavigate} from 'react-router-dom'
+
 import axios from 'axios'
 
 import './SeeAllCities.css'
 
 function SeeAllCities() {
+
+  let navigate=useNavigate();
 
     //needs list of all city names
 
@@ -32,7 +36,9 @@ function SeeAllCities() {
              <h2>Search by City</h2>
              <div className="allcities-container">
                 {
-                    cities.map(city=><button key={city._id}>{city.name}</button>)
+                    cities.map(city=>
+                    <button key={city._id}
+                    onClick={()=>navigate(`/details/${city._id}`)}>{city.name}</button>)
                 }
              </div>
     </div>
