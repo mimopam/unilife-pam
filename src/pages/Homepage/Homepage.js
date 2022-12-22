@@ -52,7 +52,7 @@ function Homepage() {
              subhead={"A simple and faster way to search for student accomodations"} 
         />
         
-        <SearchBar />
+        <SearchBar cities={cities}/>
         <h2>Student accomodations in our top cities</h2>
         <div className="cities-container">
           {

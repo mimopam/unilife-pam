@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import SeeAllCities from './pages/SeeAllCities/SeeAllCities';
 import CityDetails from './pages/CityDetails/CityDetails';
+import HomeDetails from './pages/HomeDetails/HomeDetails';
 
 
 
@@ -18,7 +19,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path="/allcities" element={<SeeAllCities />} />
-        <Route path="/details/:cityid" element={<CityDetails />} />
+        <Route path="/citydetails/:cityid" element={<CityDetails />} />
+        <Route path="/homedetails/:homeid" element={<HomeDetails />} />
       </Routes>
       <Footer />
     </BrowserRouter>

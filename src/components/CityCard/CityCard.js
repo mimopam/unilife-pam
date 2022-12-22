@@ -20,7 +20,7 @@ function CityCard({city}) {
 
 
   return (
-    <Link to={`/details/${city._id}`}>
+    <Link to={`/citydetails/${city._id}`}>
     <div style={imageStyle} >
         <div className="city-info">
             <h2>{city.name}</h2>

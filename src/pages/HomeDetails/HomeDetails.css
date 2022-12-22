@@ -1,0 +1,13 @@
+.home-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+/* .photo-box{
+    grid-column: 1 / span 1;
+}
+
+.info-box{
+    grid-column: 1 / span 1;
+} */

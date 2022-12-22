@@ -38,8 +38,8 @@ function CityDetails() {
   return (
     <div className="city-details-container">
         <Banner headline={"Search Accommodations"}
-             subhead={"Whatever you're after, we can helpl you find hte right student accommodation for you."} />
-        <SearchBar />
+             subhead={"Whatever you're after, we can helpl you find the right student accommodation for you."} />
+        {/* <SearchBar /> */}
         <h2>{numProperties} homes in {properties[0]?.address.city}</h2>
         <div className="properties">
         {
