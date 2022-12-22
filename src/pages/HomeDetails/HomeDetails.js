@@ -4,6 +4,8 @@ import axios from 'axios'
 import PhotoBox from '../../components/PhotoBox/PhotoBox';
 import './HomeDetails.css'
 import InfoBox from '../../components/InfoBox/InfoBox';
+import Bedrooms from '../../components/Bedrooms/Bedrooms';
+
 
 
 function HomeDetails() {
@@ -34,10 +36,23 @@ function HomeDetails() {
   return (
     <div className="home-grid">
       <PhotoBox pics={property?.images} className="photo-box" />
+
       <InfoBox className="info-box"/>
+
       <div>
-      <h2>Description</h2> 
-      <p>{property?.property_description}</p> 
+        <h2>Description</h2> 
+        <p>{property?.property_description}</p> 
+      </div>
+
+      <Bedrooms bedcount={property?.bedroom_count} prices={property?.bedroom_prices}/>
+
+      <div>
+        <h2>Key Features</h2>
+        <ul>
+        {
+          property?.key_features.map(item=><li>{item}</li>)
+        }
+        </ul>
       </div>
     </div>
   )

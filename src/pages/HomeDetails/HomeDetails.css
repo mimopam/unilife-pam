@@ -4,10 +4,14 @@
     grid-template-rows: 1fr 1fr 1fr;
 }
 
-/* .photo-box{
-    grid-column: 1 / span 1;
+ .photo-box{
+    width: 40%;
 }
 
 .info-box{
-    grid-column: 1 / span 1;
-} */
+    width: 40%;
+} 
+
+ul{
+    list-style-image: url('../../assets/check.png');
+}

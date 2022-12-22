@@ -6,8 +6,8 @@
 }
 
 .photo-top{
-    width: 620px;
-    height: 400px;
+    width: 520px;
+    height: 300px;
     margin: 10px;
     border-radius: 24px;
 }
@@ -17,8 +17,8 @@
 }
 
 .photo-bottom img{
-    width: 196px;
-    height: 140px;
+    width: 150px;
+    height: 110px;
     margin: 10px;
     border-radius: 12px;
 }
