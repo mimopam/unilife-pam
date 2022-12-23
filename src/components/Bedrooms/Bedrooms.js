@@ -5,6 +5,7 @@ function Bedrooms({prices, bedcount}) {
     const [numbeds, setNumbeds] = React.useState(bedcount)
 
     const bedkeys = ["bedroom_one", "bedroom_two", "bedroom_three", "bedroom_four", "bedroom_five", "bedroom_six", "bedroom_seven"]
+    console.log("prices", prices);
 
     const bedprices = [];
     for (let i = 0; i < bedcount; i++){

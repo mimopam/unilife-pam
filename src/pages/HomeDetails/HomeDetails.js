@@ -18,6 +18,7 @@ function HomeDetails() {
 
   //create state for property info
   const [property, setProperty] = React.useState()
+  const [propertyImages, setPropertyImages] = React.useState([])
 
   React.useEffect(
     ()=>{
@@ -27,6 +28,8 @@ function HomeDetails() {
         console.log('property info')
         console.log(res.data)
         setProperty(res.data)
+        setPropertyImages(res.data?.images)
+        //console.log('images', property?.images)
       })
       .catch(err => console.log(err))
 
@@ -35,7 +38,7 @@ function HomeDetails() {
 
   return (
     <div className="home-grid">
-      <PhotoBox pics={property?.images} className="photo-box" />
+      <PhotoBox pics={propertyImages} className="photo-box" />
 
       <InfoBox className="info-box"/>
 
