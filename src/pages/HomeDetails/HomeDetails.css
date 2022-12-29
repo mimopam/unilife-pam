@@ -1,7 +1,11 @@
 .home-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    grid-template-rows: auto auto auto;
+    padding: 30px;
+    column-gap: 50px;
+    row-gap: 50px;
 }
 
  .photo-box{
@@ -12,6 +16,6 @@
     width: 40%;
 } 
 
-ul{
+/* ul{
     list-style-image: url('../../assets/check.png');
-}
+} */

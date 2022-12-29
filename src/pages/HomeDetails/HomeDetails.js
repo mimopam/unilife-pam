@@ -5,7 +5,7 @@ import PhotoBox from '../../components/PhotoBox/PhotoBox';
 import './HomeDetails.css'
 import InfoBox from '../../components/InfoBox/InfoBox';
 import Bedrooms from '../../components/Bedrooms/Bedrooms';
-
+import checkmark from '../../assets/check.png'
 
 
 function HomeDetails() {
@@ -51,7 +51,9 @@ function HomeDetails() {
 
       <div>
         <h2>Key Features</h2>
-        <ul>
+        <ul style=
+        {{ listStyleImage: `url('${checkmark}')`}}>
+
         {
           property?.key_features.map(item=><li>{item}</li>)
         }
