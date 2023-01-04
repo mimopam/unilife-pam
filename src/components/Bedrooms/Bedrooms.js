@@ -16,9 +16,11 @@ function Bedrooms({prices, bedcount}) {
 
     const bedrooms = () =>{
         const bedprices = [];
+        //console.log("obj is " , prices)
         let num = 1;
         for (let bname in prices){
-            bedprices.push({name: "Bedroom " + num, 
+            console.log(bname)
+            bedprices.push({name: bname, 
                             price: prices[bname]  })
             num++;
         }

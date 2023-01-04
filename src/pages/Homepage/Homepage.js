@@ -24,9 +24,29 @@ function Homepage() {
   //create state for cities
   const [cities, setCities] = React.useState([])
 
+  //function to do filtering
+  const filterProperties = (cityid, beds)=>{
+    
+    console.log("filter", cityid, beds)
+    //make the axios post call here
+    const query = {
+      city_id: cityid,
+      bedroom_count: beds,
+      bathroom_count: 1
+    }
+
+    axios.post(`https://unilife-server.herokuapp.com/properties/filter`, {query})
+    .then(res =>{
+      console.log(res.data.response)
+    })
+    .catch(err => console.log(err))
+
+  }
+
 
   React.useEffect(() => {
     //call api to get cities info
+    console.log("homepage loaded")
 
     axios.get("https://unilife-server.herokuapp.com/cities?limit=9")
     .then(res =>{
@@ -52,7 +72,8 @@ function Homepage() {
              subhead={"A simple and faster way to search for student accomodations"} 
         />
         
-        <SearchBar cities={cities}/>
+        <SearchBar cities={cities} 
+                   filterProperties={filterProperties} />
         <h2>Student accomodations in our top cities</h2>
         <div className="cities-container">
           {

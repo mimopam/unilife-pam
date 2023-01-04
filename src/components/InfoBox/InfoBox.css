@@ -2,4 +2,19 @@
     width: 400px;
     height: 400px;
     border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid red;
+}
+
+.info-bottom{
+    background-color: yellow;
 }

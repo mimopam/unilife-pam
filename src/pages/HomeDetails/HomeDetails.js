@@ -40,7 +40,7 @@ function HomeDetails() {
     <div className="home-grid">
       <PhotoBox pics={propertyImages} className="photo-box" />
 
-      <InfoBox className="info-box"/>
+      <InfoBox className="info-box" property={property}/>
 
       <div>
         <h2>Description</h2> 
