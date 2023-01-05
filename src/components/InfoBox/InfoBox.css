@@ -1,20 +1,26 @@
 .info-container{
     width: 400px;
     height: 400px;
-    border: 1px solid blue;
+    border: 1px solid grey;
     display: flex;
     flex-direction: column;
+    border-radius: 12px;
+}
+
+.info-top{
+    text-align: center;
+    margin: 30px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid grey;
 }
 
 .info-row{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    height: 40px;
+    
     padding: 0 10px;
-    border: 1px solid red;
+    
+    
 }
 
-.info-bottom{
-    background-color: yellow;
-}
