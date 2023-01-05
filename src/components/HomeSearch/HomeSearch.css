@@ -1,8 +1,9 @@
 .city-search-container{
-    background-color: pink;
+    background-color: aliceblue;
     display: flex;
+    justify-content: space-around;
     padding: 20px;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     border-radius: 12px;
     margin-top: -50px;

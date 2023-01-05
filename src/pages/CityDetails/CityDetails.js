@@ -20,12 +20,43 @@ function CityDetails() {
     const {cityid, bedcount} = useParams();
     console.log(cityid, bedcount);
 
+    //state for the search
+    const [beds, setBeds] = React.useState(1)
+    const [type, setType] = React.useState("")
+    const [baths, setBaths] = React.useState(1)
+    const [maxPrice, setMaxPrice] = React.useState()
+
     //make state to store properties
     const [properties, setProperties] = React.useState([])
     const [numProperties, setNumProperties] = React.useState(0)
     
     const [city, setCity] = React.useState()
 
+    React.useEffect(
+        ()=>{
+            //do api call for homesearch
+            //filter
+                //make the axios post call here
+                const query = {
+                    city_id: cityid,
+                    bedroom_count: beds,
+                    bathroom_count: baths,
+                    property_type: type,
+                    rent: maxPrice
+                }
+            
+                axios.post(`https://unilife-server.herokuapp.com/properties/filter`, {query})
+                .then(res =>{
+                    console.log("filtering")
+                    console.log(res.data)
+                    setProperties(res.data.response)
+                    setNumProperties(res.data.count)
+                })
+                .catch(err => console.log(err))
+
+
+        }, [beds, type, baths, maxPrice]
+    )
     
 
     React.useEffect(
@@ -77,7 +108,8 @@ function CityDetails() {
     <div className="city-details-container">
         <Banner headline={"Search Accommodations"}
              subhead={"Whatever you're after, we can helpl you find the right student accommodation for you."} />
-        <HomeSearch />
+        <HomeSearch setBeds={setBeds} setBaths={setBaths} 
+                    setMaxPrice={setMaxPrice} setType={setType}/>
         
         <h2>{numProperties} homes in {properties[0]?.address.city}</h2>
         <div className="properties">

@@ -8,8 +8,23 @@
     padding: 0 20px;
 }
 
+.header-logo{
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
 .header-nav{
     display: flex;
     justify-content: space-between;
     width: 30%;
+}
+
+.header-btns{
+    display: flex;
+   
+   
+}
+
+.header-btns p{
+    padding: 0 10px;
 }

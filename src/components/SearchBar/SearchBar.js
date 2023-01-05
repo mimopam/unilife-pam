@@ -67,11 +67,12 @@ function SearchBar({cities, filterProperties}) {
         {/* <input type="text" placeholder="Any bedroom" /> */}
         <select name="bedrooms"
                 onChange={(e)=>setBeds(e.target.value)}>
-          
+          <option value="">Any</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
+          <option value="6">6</option>
         </select>
         <button onClick={handleSearch}>Find Homes</button>
     </div>

@@ -6,9 +6,37 @@ import './HomeDetails.css'
 import InfoBox from '../../components/InfoBox/InfoBox';
 import Bedrooms from '../../components/Bedrooms/Bedrooms';
 import checkmark from '../../assets/check.png'
+import Modal from 'react-modal'
 
 
 function HomeDetails() {
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      borderRadius: '16px'
+    },
+  };
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   //need to retrieve homeid from params
   const {homeid} = useParams();
@@ -40,7 +68,54 @@ function HomeDetails() {
     <div className="home-grid">
       <PhotoBox pics={propertyImages} className="photo-box" />
 
-      <InfoBox className="info-box" property={property}/>
+      <div className="upper-right">
+        <InfoBox className="info-box" property={property}/>
+        <div>
+          <button>Shortlist</button>
+          <button onClick={openModal}>Book Viewing</button>
+          <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Book a Viewing</h2> */}
+        <h2 >Book a Viewing</h2>
+        
+        
+        <form className="modal-form">
+          <div className="form-half">
+          <div className="input-wrapper">
+          <label>Name 
+            <input type="text" placeholder="Enter your name" />
+          </label>
+          </div>
+          <div className="input-wrapper">
+          <label>Email 
+            <input type="text" placeholder="Enter your email address" />
+          </label>
+          </div>
+          <div className="input-wrapper">
+          <label>Phone Number 
+            
+          </label>
+          <input type="text" placeholder="Enter your phone number" />
+          </div>
+          </div>
+
+          <div className="form-half">
+          <div className="input-wrapper">
+          <label>Message
+            <input type="text" placeholder="Enter your message" />
+          </label>
+          </div>
+          <button className="modal-btn" onClick={closeModal}>Submit</button>
+          </div>
+        </form>
+      </Modal>
+        </div>
+      </div>
 
       <div>
         <h2>Description</h2> 
