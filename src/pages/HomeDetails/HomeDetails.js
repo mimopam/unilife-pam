@@ -7,32 +7,23 @@ import InfoBox from '../../components/InfoBox/InfoBox';
 import Bedrooms from '../../components/Bedrooms/Bedrooms';
 import checkmark from '../../assets/check.png'
 import Modal from 'react-modal'
+import BookViewingModal from '../../components/BookViewingModal/BookViewingModal';
 
 
 function HomeDetails() {
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-      borderRadius: '16px'
-    },
-  };
+
 
   function openModal() {
     setIsOpen(true);
   }
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
-  }
+  // function afterOpenModal() {
+  //   // references are now sync'd and can be accessed.
+  //   subtitle.style.color = '#f00';
+  // }
 
   function closeModal() {
     setIsOpen(false);
@@ -73,18 +64,46 @@ function HomeDetails() {
         <div>
           <button>Shortlist</button>
           <button onClick={openModal}>Book Viewing</button>
-          <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Book a Viewing</h2> */}
-        <h2 >Book a Viewing</h2>
+          
+          
         
         
-        <form className="modal-form">
+        
+        </div>
+      </div>
+
+      <div>
+        <h2>Description</h2> 
+        <p>{property?.property_description}</p> 
+      </div>
+
+      <Bedrooms bedcount={property?.bedroom_count} prices={property?.bedroom_prices}/>
+
+      <div>
+        <h2>Key Features</h2>
+        <ul style=
+        {{ listStyleImage: `url('${checkmark}')`}}>
+
+        {
+          property?.key_features.map(item=><li>{item}</li>)
+        }
+        </ul>
+      </div>
+      {
+            modalIsOpen?
+            <BookViewingModal address={property.address} closeModal={closeModal}/>
+            :
+            null
+
+          }
+    </div>
+  )
+}
+
+export default HomeDetails
+
+
+{/* <form className="modal-form">
           <div className="form-half">
           <div className="input-wrapper">
           <label>Name 
@@ -113,29 +132,14 @@ function HomeDetails() {
           <button className="modal-btn" onClick={closeModal}>Submit</button>
           </div>
         </form>
-      </Modal>
-        </div>
-      </div>
+      </Modal> */}
 
-      <div>
-        <h2>Description</h2> 
-        <p>{property?.property_description}</p> 
-      </div>
-
-      <Bedrooms bedcount={property?.bedroom_count} prices={property?.bedroom_prices}/>
-
-      <div>
-        <h2>Key Features</h2>
-        <ul style=
-        {{ listStyleImage: `url('${checkmark}')`}}>
-
-        {
-          property?.key_features.map(item=><li>{item}</li>)
-        }
-        </ul>
-      </div>
-    </div>
-  )
-}
-
-export default HomeDetails
+      // <Modal
+      //   isOpen={modalIsOpen}
+      //   onAfterOpen={afterOpenModal}
+      //   onRequestClose={closeModal}
+      //   style={customStyles}
+      //   contentLabel="Example Modal"
+      // >
+      //   {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Book a Viewing</h2> */}
+      //   {/* <h2 >Book a Viewing</h2> */}

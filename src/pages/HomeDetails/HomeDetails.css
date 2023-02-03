@@ -37,7 +37,7 @@
     padding: 20px;
 }
 
-.form-half{
+/* .form-half{
     display: flex;
     flex-direction: column;
    
@@ -57,7 +57,7 @@
     /* padding: 8px 16px;
     margin-top: 10px; */
     
-    font-size: 1.5em;
+    /* font-size: 1.5em;
 }
 .modal-btn{
     border: none;
@@ -67,4 +67,4 @@
     color: white;
     cursor: pointer;
     width: 60%;
-}
+}  */

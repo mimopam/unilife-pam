@@ -18,7 +18,7 @@ function SeeAllCities() {
     React.useEffect(() => {
         //call api to get cities info
     
-        axios.get("https://unilife-server.herokuapp.com/cities?limit=30")
+        axios.get("https://unilife-server.herokuapp.com/cities?limit=20")
         .then(res =>{
           console.log(res.data.response);
           setCities(res.data.response);
