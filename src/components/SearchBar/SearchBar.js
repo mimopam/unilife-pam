@@ -58,6 +58,7 @@ function SearchBar({cities, filterProperties}) {
     <div className="search-container">
       <select name="cities"
               onChange={(e)=>setCityname(e.target.value)}>
+                <option>Search by city</option>
         {
           cities.map(item=><option value={item?.name}
                      key={item?._id} >{item?.name}</option>)

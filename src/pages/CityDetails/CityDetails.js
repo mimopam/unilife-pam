@@ -111,7 +111,7 @@ function CityDetails() {
         <HomeSearch setBeds={setBeds} setBaths={setBaths} 
                     setMaxPrice={setMaxPrice} setType={setType}/>
         
-        <h2>{numProperties} homes in {properties[0]?.address.city}</h2>
+        <h2>{numProperties} homes in {properties[0]?.address?.city}</h2>
         <div className="properties">
         {
             // properties.map(item=> <p>{item?.rent}</p>)

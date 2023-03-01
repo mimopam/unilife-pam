@@ -3,9 +3,10 @@ import './Header.css'
 import House from '../../assets/house.png'
 import unilife from '../../assets/UniLife.png'
 import { MdFavoriteBorder, MdMailOutline } from "react-icons/md";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <div className="header-container">
         <Link to='/' className="header-logo">
@@ -14,7 +15,7 @@ function Header() {
         </Link>
         <div className="header-nav">
           <div className="header-btns">
-            <MdFavoriteBorder />
+            <MdFavoriteBorder onClick={()=>navigate(`/favorites`)}/>
             <p>ShortList</p>
           </div>
           <div className="header-btns">

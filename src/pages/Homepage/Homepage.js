@@ -17,6 +17,7 @@ import {Link} from 'react-router-dom'
 import './Homepage.css'
 import TextBox from '../../components/TextBox/TextBox'
 import SearchBar from '../../components/SearchBar/SearchBar'
+import HomeProperties from '../../components/HomeProperties/HomeProperties'
 
 
 function Homepage() {
@@ -74,19 +75,24 @@ function Homepage() {
         
         <SearchBar cities={cities} 
                    filterProperties={filterProperties} />
-        <h2>Student accomodations in our top cities</h2>
+
+        <HomeProperties />
+        {/* <h2>Student accomodations in our top cities</h2>
+        
         <div className="cities-container">
           {
             cities.map(city=><CityCard key={city._id} city={city}/>)
           }
         </div>
-        {/* {
-          cities.map(city=><p>{city.name}</p>)
-        } */}
+        
 
         <Link to="/allcities">
         <button className="see-cities-btn">See All Cities</button>
-        </Link>
+        </Link> */}
+
+        {/* {
+          cities.map(city=><p>{city.name}</p>)
+        } */}
 
         <div className="compare-container">
           <h1>Compare all inclusive student homes</h1>

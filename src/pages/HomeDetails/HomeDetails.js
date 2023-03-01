@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
 import PhotoBox from '../../components/PhotoBox/PhotoBox';
@@ -8,6 +8,7 @@ import Bedrooms from '../../components/Bedrooms/Bedrooms';
 import checkmark from '../../assets/check.png'
 import Modal from 'react-modal'
 import BookViewingModal from '../../components/BookViewingModal/BookViewingModal';
+import { FavContext } from '../../contexts/FavContext';
 
 
 function HomeDetails() {
@@ -15,6 +16,7 @@ function HomeDetails() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
 
+  const {favorites, setFavorites} = useContext(FavContext);
 
   function openModal() {
     setIsOpen(true);
@@ -55,6 +57,11 @@ function HomeDetails() {
     }, []
   )
 
+  const addToFavorites = () =>{
+    //add property object to favorites
+    setFavorites([...favorites, property])
+  }
+
   return (
     <div className="home-grid">
       <PhotoBox pics={propertyImages} className="photo-box" />
@@ -62,12 +69,8 @@ function HomeDetails() {
       <div className="upper-right">
         <InfoBox className="info-box" property={property}/>
         <div>
-          <button>Shortlist</button>
-          <button onClick={openModal}>Book Viewing</button>
-          
-          
-        
-        
+          <button onClick={addToFavorites}>Shortlist</button>
+          <button onClick={openModal}>Book Viewing</button>       
         
         </div>
       </div>

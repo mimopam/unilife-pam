@@ -8,7 +8,8 @@ function Banner({headline, subhead}) {
     const bannerStyle = {
             height:"40vh",
             width: "100%",
-            backgroundImage: `url("${cover}")`,
+            //backgroundImage: `url("${cover}")`,
+          
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",

@@ -38,7 +38,7 @@ function SeeAllCities() {
                 {
                     cities.map(city=>
                     <button key={city._id}
-                    onClick={()=>navigate(`/details/${city._id}`)}>{city.name}</button>)
+                    onClick={()=>navigate(`/citydetails/${city._id}`)}>{city.name}</button>)
                 }
              </div>
     </div>
