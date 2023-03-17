@@ -21,6 +21,22 @@
     width: 40%;
 } 
 
+.btn-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.short-btn, .view-btn{
+    padding: 8px 16px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    width: 200px;
+}
+
+.view-btn{
+    background-color: blue;
+    color: white;
+}
 /* ul{
     list-style-image: url('../../assets/check.png');
 } */

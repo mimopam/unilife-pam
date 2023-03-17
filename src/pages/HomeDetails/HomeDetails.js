@@ -6,13 +6,13 @@ import './HomeDetails.css'
 import InfoBox from '../../components/InfoBox/InfoBox';
 import Bedrooms from '../../components/Bedrooms/Bedrooms';
 import checkmark from '../../assets/check.png'
-import Modal from 'react-modal'
+//import Modal from 'react-modal'
 import BookViewingModal from '../../components/BookViewingModal/BookViewingModal';
 import { FavContext } from '../../contexts/FavContext';
 
 
 function HomeDetails() {
-  let subtitle;
+  //let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
 
@@ -40,6 +40,7 @@ function HomeDetails() {
   //create state for property info
   const [property, setProperty] = React.useState()
   const [propertyImages, setPropertyImages] = React.useState([])
+  //const [bedPrices, setBedPrices] = React.useState([])
 
   React.useEffect(
     ()=>{
@@ -50,10 +51,11 @@ function HomeDetails() {
         console.log(res.data)
         setProperty(res.data)
         setPropertyImages(res.data?.images)
+        //setBedPrices(Object.values(res.data?.bedroom_prices))
         //console.log('images', property?.images)
       })
       .catch(err => console.log(err))
-
+      //eslint-disable-next-line
     }, []
   )
 
@@ -68,9 +70,9 @@ function HomeDetails() {
 
       <div className="upper-right">
         <InfoBox className="info-box" property={property}/>
-        <div>
-          <button onClick={addToFavorites}>Shortlist</button>
-          <button onClick={openModal}>Book Viewing</button>       
+        <div className="btn-container">
+          <button className="short-btn" onClick={addToFavorites}>Shortlist</button>
+          <button className="view-btn" onClick={openModal}>Book Viewing</button>       
         
         </div>
       </div>
@@ -106,7 +108,7 @@ function HomeDetails() {
 export default HomeDetails
 
 
-{/* <form className="modal-form">
+/* <form className="modal-form">
           <div className="form-half">
           <div className="input-wrapper">
           <label>Name 
@@ -135,7 +137,7 @@ export default HomeDetails
           <button className="modal-btn" onClick={closeModal}>Submit</button>
           </div>
         </form>
-      </Modal> */}
+      </Modal> */
 
       // <Modal
       //   isOpen={modalIsOpen}

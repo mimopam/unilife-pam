@@ -71,7 +71,7 @@ function CityDetails() {
                 const query = {
                     city_id: cityid,
                     bedroom_count: bedcount,
-                    bathroom_count: 1
+                    //bathroom_count: 1
                 }
             
                 axios.post(`https://unilife-server.herokuapp.com/properties/filter`, {query})

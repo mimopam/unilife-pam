@@ -21,13 +21,17 @@ function Property({data}) {
                 <p><span>< MdOutlineBathtub/></span>{data?.bathroom_count}</p>
             </div>
         </div>
-        <div className="type-bar">
-           <p>{data?.property_type}</p> 
-           <p>{data?.furnished}</p> 
+        <div className="prop-info">
+            <div className="type-bar">
+                <p>{data?.property_type}</p> 
+                <p>{data?.furnished}</p> 
+            </div>
+            <p><span>< MdOutlineLocationOn/></span>{data?.address.street} {data?.address.city} {data?.address.postcode}</p>
         </div>
         <div className="view-bar">
-            <img src={house}/>
-            <p>View Home</p>
+            {/* <img src={house}/> */}
+            
+            <p><span>< MdOutlineHome/></span>View Home</p>
         </div>
     </Link>
   )

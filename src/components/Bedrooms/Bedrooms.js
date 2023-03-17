@@ -37,9 +37,9 @@ function Bedrooms({prices}) {
                 
             } */}
             {
-                Object.values(prices).map( (item, index) => 
+                prices && Object.values(prices).map( (item, index) => 
                 <div className="bed-prices" key={index}>
-                    <p >{`Bedroom ${index+1}`}</p>
+                    <p>{`Bedroom ${index+1}`}</p>
                     <p> &#8364;{item} per week</p>
                 </div>)         
                 
