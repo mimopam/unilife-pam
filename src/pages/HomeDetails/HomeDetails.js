@@ -80,7 +80,7 @@ function HomeDetails() {
         <p>{property?.property_description}</p> 
       </div>
 
-      <Bedrooms bedcount={property?.bedroom_count} prices={property?.bedroom_prices}/>
+      <Bedrooms prices={property?.bedroom_prices}/>
 
       <div>
         <h2>Key Features</h2>

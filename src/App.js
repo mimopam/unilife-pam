@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import './App.css';
 import Homepage from './pages/Homepage/Homepage';
 import{BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -40,11 +40,11 @@ function App() {
 
 export default App;
 
-{/* <form onSubmit={handleSubmit}>
+/* <form onSubmit={handleSubmit}>
         <input
           onChange={(e)=>setEmail(e.target.value)}
         />
-       </form> */}
+       </form> */
 
 //        const [email,setEmail]=useState('')
 

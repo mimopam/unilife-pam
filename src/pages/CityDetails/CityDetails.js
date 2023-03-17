@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from '../../components/Banner/Banner'
-import SearchBar from '../../components/SearchBar/SearchBar'
+//import SearchBar from '../../components/SearchBar/SearchBar'
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
 import studentpic from '../../assets/students.png'
@@ -20,7 +20,7 @@ function CityDetails() {
     const {cityid, bedcount} = useParams();
     console.log(cityid, bedcount);
 
-    //state for the search
+    //state for the search, need default values
     const [beds, setBeds] = React.useState(1)
     const [type, setType] = React.useState("")
     const [baths, setBaths] = React.useState(1)
@@ -36,6 +36,7 @@ function CityDetails() {
         ()=>{
             //do api call for homesearch
             //filter
+            console.log("filter", beds, baths,type,maxPrice )
                 //make the axios post call here
                 const query = {
                     city_id: cityid,
@@ -54,7 +55,7 @@ function CityDetails() {
                 })
                 .catch(err => console.log(err))
 
-
+        //eslint-disable-next-line
         }, [beds, type, baths, maxPrice]
     )
     
@@ -64,8 +65,9 @@ function CityDetails() {
             console.log('city details loaded ', bedcount);
             //decide which api call to use
             if (bedcount){
+                console.log("filtering")
                 //filter
-                //make the axios post call here
+                //make the axios post call here for search
                 const query = {
                     city_id: cityid,
                     bedroom_count: bedcount,
@@ -101,7 +103,7 @@ function CityDetails() {
                 
             })
             .catch(err => console.log(err))
-
+            //eslint-disable-next-line
         }, []
     )
   return (
@@ -124,7 +126,7 @@ function CityDetails() {
                 <p>{city?.student_life}</p>
 
             </div>
-            <img src={studentpic} className="description-img" />
+            <img src={studentpic} alt="student" className="description-img" />
 
         </div>
     </div>

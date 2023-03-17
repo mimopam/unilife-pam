@@ -1,14 +1,14 @@
 import React from 'react'
 import './SearchBar.css'
-import axios from 'axios'
+//import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 
-function SearchBar({cities, filterProperties}) {
+function SearchBar({cities}) {
   let navigate=useNavigate();
 
   const [cityname, setCityname] = React.useState("")
-  const [beds, setBeds] = React.useState(1);
-  const [cityid, setCityid] = React.useState("")
+  const [beds, setBeds] = React.useState(1); //default value
+  //const [cityid, setCityid] = React.useState("")
 
   // const query = {
   //    city_id: "633a96af6893d471a68cc88f",
@@ -23,15 +23,16 @@ function SearchBar({cities, filterProperties}) {
     let match = cities.filter(item => cityname === item.name)
     console.log(match);
     console.log("id is " , match[0]._id)
-    setCityid(match[0]._id)
+    //setCityid(match[0]._id)
     console.log("beds is ", beds)
-    //route to city details with parameters
+    //route to city details page with these parameters
     navigate(`/citydetails/${match[0]._id}/${beds}`)
 
     //now send id and beds to homepage
     //filterProperties(cityid, beds)
   }
 
+  /*
   const findId = (e) =>{
     console.log(e)
     //store in state
@@ -39,6 +40,8 @@ function SearchBar({cities, filterProperties}) {
     //what is city name that was selected
     console.log("name is ",  cityname)
   }
+  */
+ /*
   const testSearch = () =>{
     const query = {
       city_id: "633a96af6893d471a68cc88f",
@@ -54,6 +57,8 @@ function SearchBar({cities, filterProperties}) {
     .catch(err => console.log(err))
 
   }
+  */
+
   return (
     <div className="search-container">
       <select name="cities"

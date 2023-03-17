@@ -1,17 +1,17 @@
 import axios from 'axios'
 import React from 'react'
 import Banner from '../../components/Banner/Banner'
-import CityCard from '../../components/CityCard/CityCard'
+//import CityCard from '../../components/CityCard/CityCard'
 import CompareBox from '../../components/CompareBox/CompareBox'
-import Contacts from '../../components/Contacts/Contacts'
-import Footer from '../../components/Footer/Footer'
-import Header from '../../components/Header/Header'
+//import Contacts from '../../components/Contacts/Contacts'
+//import Footer from '../../components/Footer/Footer'
+//import Header from '../../components/Header/Header'
 import searchpic from '../../assets/globesearch.png'
 import comparepic from '../../assets/compare.png'
 import heartpic from '../../assets/heart.png'
 import personpic from '../../assets/person.png'
 import handpic from '../../assets/hands.png'
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 
 
 import './Homepage.css'
@@ -26,6 +26,7 @@ function Homepage() {
   const [cities, setCities] = React.useState([])
 
   //function to do filtering
+  /*
   const filterProperties = (cityid, beds)=>{
     
     console.log("filter", cityid, beds)
@@ -43,7 +44,7 @@ function Homepage() {
     .catch(err => console.log(err))
 
   }
-
+*/
 
   React.useEffect(() => {
     //call api to get cities info
@@ -73,8 +74,7 @@ function Homepage() {
              subhead={"A simple and faster way to search for student accomodations"} 
         />
         
-        <SearchBar cities={cities} 
-                   filterProperties={filterProperties} />
+        <SearchBar cities={cities}  />
 
         <HomeProperties />
         {/* <h2>Student accomodations in our top cities</h2>
@@ -120,7 +120,7 @@ function Homepage() {
                      text={text2} />
             <button className="see-cities-btn">Search&Compare</button>
           </div>
-          <img src={personpic} />
+          <img src={personpic} alt="person"/>
         </div>
         
         

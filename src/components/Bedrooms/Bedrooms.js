@@ -1,9 +1,9 @@
 import React from 'react'
 import './Bedrooms.css'
 
-function Bedrooms({prices, bedcount}) {
+function Bedrooms({prices}) {
     //const [numbeds, setNumbeds] = React.useState(bedcount)
-
+/*
     const bedkeys = ["bedroom_one", "bedroom_two", "bedroom_three", "bedroom_four", "bedroom_five", "bedroom_six", "bedroom_seven"]
     
 
@@ -26,6 +26,7 @@ function Bedrooms({prices, bedcount}) {
         // }
         return bedtemp;
     }
+    */
 
   return (
     <div className="bedrooms-container">
@@ -36,10 +37,10 @@ function Bedrooms({prices, bedcount}) {
                 
             } */}
             {
-                bedrooms().map( (item) => 
-                <div className="bed-prices" key={item.name}>
-                    <p >{item.name}</p>
-                    <p> &#8364;{item.price} per week</p>
+                Object.values(prices).map( (item, index) => 
+                <div className="bed-prices" key={index}>
+                    <p >{`Bedroom ${index+1}`}</p>
+                    <p> &#8364;{item} per week</p>
                 </div>)         
                 
             }
